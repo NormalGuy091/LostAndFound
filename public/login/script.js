@@ -1,13 +1,19 @@
 // Variables
 
 const token = localStorage.getItem('token')
+const authApiBase = '/auth'
 let isLogin = true
+//Email
+let containsAt = false
+//Password
+let moreThan6 = false
+let containsUppercase = false
+let containsNumber = false
 
 // HTML Elements
 
 const inputs = document.querySelectorAll('.input')
-let emailVal = document.getElementById('email-input').value
-let passwordVal = document.getElementById('password-input').value
+
 const rememberMe = document.getElementById('remember-me')
 const optionMessage = document.getElementById('option')
 const optionButton = document.getElementById('option-btn')
@@ -37,4 +43,24 @@ function change() {
         optionButton.textContent = 'Register'
         loginRegisterButton.textContent = 'Login'
     }
+}
+
+async function register() {
+    const email = document.getElementById('email-input')
+    const password = document.getElementById('password-input')
+
+
+    const response = await fetch(authApiBase + '/register', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            "email": email.value,
+            "password": password.value
+        })
+    }) 
+    const data = await response.json()
+    if (response.status != 200) {
+        alert(`Failed to register. Reason: ${data.message}`)
+    }
+    console.log(data)
 }
