@@ -1,6 +1,7 @@
 import express from 'express'
 import 'dotenv/config' 
 import authRoutes from './routes/authRoutes.js'
+import pageRoutes from './routes/pageRoutes.js'
 import path from 'node:path'
 import { fileURLToPath } from 'url'
 import authMiddleware from '../middleware/authMiddleware.js'
@@ -17,7 +18,8 @@ app.use('/auth', authRoutes)
 app.use(express.static(path.join(__dirname,'..' ,'public')))
 console.log(path.join(__dirname, '..', 'public'))
 
-app.get('/register', authRoutes)
+// Page-related requests
+app.get('/register', pageRoutes)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
