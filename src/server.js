@@ -1,4 +1,5 @@
 import express from 'express'
+<<<<<<< HEAD
 import 'dotenv/config' 
 import authRoutes from './routes/authRoutes.js'
 import pageRoutes from './routes/pageRoutes.js'
@@ -23,4 +24,5 @@ app.get('/register', pageRoutes)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
+
 })

@@ -9,4 +9,5 @@ const __dirname = path.dirname(__filename)
 
 router.post('/register', createUser)
 router.post('/login', loginUser)
+
 export default router
