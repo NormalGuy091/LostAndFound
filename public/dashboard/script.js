@@ -1,16 +1,12 @@
-// Variables
-let isLoggedIn = true
 const token = localStorage.getItem('token')
-const loggedInElements = document.querySelectorAll('.loggedIn')
 
-
-// Startup Logic
 if (!token) {
-    isLoggedIn = false
+    window.location.href = '/login'
 }
-isLoggedIn = true
-if (!isLoggedIn) {
-    loggedInElements.forEach(element => {
-        element.style.display = 'none';
-    });
+
+
+
+async function logout() {
+    localStorage.removeItem('token')
+    window.location.reload
 }

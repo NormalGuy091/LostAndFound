@@ -19,8 +19,10 @@ async function register() {
         })
     }) 
     const data = await response.json()
+    const token = data.token
     if (response.status != 200) {
         alert(`Failed to register. Reason: ${data.message}`)
     }
-    console.log(data)
+    localStorage.setItem('token', token)
+    window.location.href = '..'
 }
