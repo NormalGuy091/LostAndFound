@@ -2,7 +2,10 @@
 
 const token = localStorage.getItem('token')
 const authApiBase = '/auth'
-
+if (token) {
+    alert('You already logged in! Please log out to login to other account.')
+    window.location.href = '..'
+}
 
 
 async function register() {

@@ -3,7 +3,10 @@
 const token = localStorage.getItem('token')
 const authApiBase = '/auth'
 let isLogin = true
-
+if (token) {
+    alert('You already logged in! Please log out to login to other account.')
+    window.location.href = '..'
+}
 
 async function register() {
     const email = document.getElementById('email-input')
