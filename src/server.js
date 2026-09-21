@@ -2,6 +2,7 @@ import express from 'express'
 import 'dotenv/config' 
 import authRoutes from './routes/authRoutes.js'
 import pageRoutes from './routes/pageRoutes.js'
+import lostandfoundRoutes from './routes/lostandfoundRoutes.js'
 import path from 'node:path'
 import { fileURLToPath } from 'url'
 import authMiddleware from '../middleware/authMiddleware.js'
@@ -16,6 +17,7 @@ const publicDirectory = path.join(__dirname, '..', 'public')
 
 app.use(express.json())
 app.use('/auth', authRoutes)
+app.use('/items', authMiddleware, lostandfoundRoutes)
 
 app.use(express.static(publicDirectory))
 
