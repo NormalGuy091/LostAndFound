@@ -18,6 +18,7 @@ const publicDirectory = path.join(__dirname, '..', 'public')
 app.use(express.json())
 app.use('/auth', authRoutes)
 app.use('/items', authMiddleware, lostandfoundRoutes)
+app.use(pageRoutes)
 
 app.use(express.static(publicDirectory))
 

@@ -12,5 +12,8 @@ const publicDirectory = path.join(__dirname, '..', '..', 'public')
 router.get('/register', (req, res) => {
     res.sendFile(path.join(publicDirectory, 'login', 'index.html'))
 })
+router.get('/lost', (req, res) => {
+    res.sendFile(path.join(publicDirectory, 'form', 'lost', 'index.html'))
+})
 
 export default router

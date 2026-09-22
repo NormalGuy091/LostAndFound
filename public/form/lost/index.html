@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost | LostAndFound</title>
+    <link rel="stylesheet" href="/form/lost/style.css"> 
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <header class="loggedIn">
+        <span id="title">ImperialStudent</span>
+        <span><button onclick="logout()" id="logout-btn">Logout</button></span>
+    </header>
+    <div class="bigtext">Report a Lost Item</div>
+    <section id="form">
+        <label for="item-name">What did you lose?</label>
+        <input type="text" id="item-name">
+        <label for="item-category">Category</label>
+        <select name="item-category" id="item-category">
+            <option value="personal">Personal Items</option>
+            <option value="school">School Items</option>
+        </select>
+        <label for="description">Desrciption</label>
+        <input type="text" id="description" placeholder="Tell us what it looks like">
+        <label for="location">Where did you last see it?</label>
+        <input type="text" id="location">
+        <label for="time">When?</label>
+        <input type="datetime-local" id="time">
+        <label for="photo">Add a photo</label>
+        <input type="file" name="photo" id="photo">
+        <button id="submit-btn" onclick="submitForm()">Submit</button>
+    </section>
+
+    <script src="/form/lost/script.js"></script> 
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

@@ -1,7 +1,10 @@
 import express from 'express'
+import multer from 'multer'
 
-export async function createReport() {
 
+
+export async function createReport(req, res) {
+    
 }
 
 export function getAllReports() {
