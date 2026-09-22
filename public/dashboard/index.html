@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dashboard/style.css">
+     <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>ImperialStudent</title>
+</head>
+<body>
+    <header class="loggedIn">
+        <span id="title">ImperialStudent</span>
+        <span><button onclick="logout()" id="logout-btn">Logout</button></span>
+    </header>
+    <section id="welcome-page">
+        <span id="big-text">Lost something?</span>
+        <span id="big-text-2">Let's help you find it.</span>
+    </section>
+    <section id="selection">
+        <input type="text" id="search" placeholder="Search item" autocomplete="none">
+        <div class="reportlost">
+            <a href="">Report Lost Item</a>
+        </div>
+        <div class="reportfound">
+            <a href="">Report Found Item</a>
+        </div>
+    </section>
+    <section id="dashboard">
+        <div id="recent">Recent Reports</div>
+        <div class="recent-reports-container">
+            <div id="report-1" class="report">
+                <span id="name-1"></span>
+                <span id="location-1"></span>
+                <span id="time-1"></span>
+            </div>
+            <div id="report-2" class="report">
+                <span id="name-2"></span>
+                <span id="location-2"></span>
+                <span id="time-2"></span>
+            </div>
+            <div id="report-3" class="report">
+                <span id="name-3"></span>
+                <span id="location-3"></span>
+                <span id="time-3"></span>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="/dashboard/script.js"></script>
+</body>
