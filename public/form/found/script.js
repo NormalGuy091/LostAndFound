@@ -1,5 +1,3 @@
-// HTML ELEMENTS //
-
 const itemName = document.getElementById('item-name')
 const itemLocation = document.getElementById('location')
 const dateTime = document.getElementById('time')
@@ -22,7 +20,7 @@ async function submitForm() {
 
     const formData = new FormData();
 
-    formData.append(`type`, 'lost')
+    formData.append(`type`, 'found')
     formData.append('title', title)
     formData.append(`location`, loc)
     formData.append(`date`, time)
@@ -34,7 +32,7 @@ async function submitForm() {
         const response = await fetch('/items', { method: 'POST', body: formData })
         const data = await response.json()
         if (!response.ok) throw new Error(data.message || 'Unable to register the report.')
-        alert('Successfully registered the Lost Report.')
+        alert('Successfully registered the Found Report.')
         window.location.href = '/'
     } catch (error) {
         alert(error.message)

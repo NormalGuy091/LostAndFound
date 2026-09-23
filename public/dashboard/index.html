@@ -17,35 +17,29 @@
         <span id="big-text-2">Let's help you find it.</span>
     </section>
     <section id="selection">
-        <input type="text" id="search" placeholder="Search item" autocomplete="none">
-        <div class="reportlost">
-            <a href="">Report Lost Item</a>
+        <div class="search-row">
+            <input type="search" id="search" placeholder="Search item" autocomplete="off">
+            <select id="type-filter" aria-label="Filter by report type">
+                <option value="">All reports</option>
+                <option value="lost">Lost items</option>
+                <option value="found">Found items</option>
+            </select>
         </div>
-        <div class="reportfound">
-            <a href="">Report Found Item</a>
+        <div class="report-actions">
+            <a class="reportlost" href="/lost">Report Lost Item</a>
+            <a class="reportfound" href="/found">Report Found Item</a>
         </div>
     </section>
     <section id="dashboard">
         <div id="recent">Recent Reports</div>
-        <div class="recent-reports-container">
-            <div id="report-1" class="report">
-                <span id="name-1"></span>
-                <span id="location-1"></span>
-                <span id="time-1"></span>
-            </div>
-            <div id="report-2" class="report">
-                <span id="name-2"></span>
-                <span id="location-2"></span>
-                <span id="time-2"></span>
-            </div>
-            <div id="report-3" class="report">
-                <span id="name-3"></span>
-                <span id="location-3"></span>
-                <span id="time-3"></span>
-            </div>
-        </div>
+        <p id="reports-message" class="reports-message">Loading reports...</p>
+        <div class="recent-reports-container" id="reports"></div>
     </section>
 
+    <dialog id="report-dialog">
+        <button class="close-dialog" type="button" aria-label="Close">&times;</button>
+        <div id="report-detail"></div>
+    </dialog>
 
     <script src="/dashboard/script.js"></script>
 </body>

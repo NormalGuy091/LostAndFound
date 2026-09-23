@@ -1,11 +1,6 @@
 // Variables
 
-const token = localStorage.getItem('token')
 const authApiBase = '/auth'
-if (token) {
-    alert('You already logged in! Please log out to login to other account.')
-    window.location.href = '..'
-}
 
 
 async function register() {
@@ -22,10 +17,9 @@ async function register() {
         })
     }) 
     const data = await response.json()
-    const token = data.token
     if (response.status != 200) {
         alert(`Failed to register. Reason: ${data.message}`)
+        return
     }
-    localStorage.setItem('token', token)
     window.location.href = '..'
 }

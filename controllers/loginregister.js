@@ -3,6 +3,14 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import 'dotenv/config'
 
+function setAuthCookie(res, token) {
+    const secure = process.env.NODE_ENV === 'production' ? '; Secure' : ''
+    res.setHeader(
+        'Set-Cookie',
+        `token=${encodeURIComponent(token)}; Max-Age=86400; Path=/; HttpOnly; SameSite=Lax${secure}`
+    )
+}
+
 export async function createUser(req, res) {
     const { email, password } = req.body
     if (!email || !password) {
@@ -20,7 +28,8 @@ export async function createUser(req, res) {
     const [success] = await db.query('INSERT INTO users (email, password) VALUES (?,?)', [email, hashedPassword])
     const userId = success.insertId
     const token = jwt.sign({userId}, process.env.JWT_SECRET_TOKEN, {expiresIn: '24h'})
-    return res.status(200).json({token: token})
+    setAuthCookie(res, token)
+    return res.status(200).json({ message: 'Registration successful.' })
 }
 
 export async function loginUser(req, res) {
@@ -37,5 +46,6 @@ export async function loginUser(req, res) {
     console.log(result)
     if (!result) { return res.status(401).json({ message: 'Invalid password.' }) }
     const token = jwt.sign({userId: dbResult[0].id}, process.env.JWT_SECRET_TOKEN, {expiresIn: '24h'})
-    return res.status(200).json({token: token})
+    setAuthCookie(res, token)
+    return res.status(200).json({ message: 'Login successful.' })
 }

@@ -1,12 +1,7 @@
 // Variables
 
-const token = localStorage.getItem('token')
 const authApiBase = '/auth'
 let isLogin = true
-if (token) {
-    alert('You already logged in! Please log out to login to other account.')
-    window.location.href = '..'
-}
 
 async function register() {
     const email = document.getElementById('email-input')
@@ -22,11 +17,9 @@ async function register() {
         })
     }) 
     const data = await response.json()
-    const token = await data.token
     if (response.status != 200) {
         alert(`Failed to login. Reason: ${data.message}`)
         return 0
     }
-    localStorage.setItem('token', token)
     window.location.href = '..'
 }

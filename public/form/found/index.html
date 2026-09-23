@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lost | LostAndFound</title>
-    <link rel="stylesheet" href="/form/lost/style.css"> 
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="/form/found/style.css">
 </head>
 <body>
     <header class="loggedIn">
         <span id="title">ImperialStudent</span>
         <span><button onclick="logout()" id="logout-btn">Logout</button></span>
     </header>
-    <div class="bigtext">Report a Lost Item</div>
+    <div class="bigtext">Report a Found Item</div>
     <section id="form">
-        <label for="item-name">What did you lose?</label>
+        <label for="item-name">What did you find?</label>
         <input type="text" id="item-name">
         <label for="item-category">Category</label>
         <select name="item-category" id="item-category">
@@ -22,8 +21,8 @@
             <option value="school items">School Items</option>
         </select>
         <label for="description">Description</label>
-        <textarea id="description" placeholder="Tell us what it looks like"></textarea>
-        <label for="location">Where did you last see it?</label>
+        <textarea type="text" id="description" placeholder="Tell us what it looks like"></textarea>
+        <label for="location">Where did you found it?</label>
         <input type="text" id="location">
         <label for="time">When?</label>
         <input type="datetime-local" id="time">
@@ -32,7 +31,7 @@
         <button id="submit-btn" onclick="submitForm()">Submit</button>
     </section>
 
-    <script src="/form/lost/script.js"></script> 
+    <script src="/form/found/script.js"></script>
     <!-- <script src="script.js"></script> -->
 </body>
 </html>
