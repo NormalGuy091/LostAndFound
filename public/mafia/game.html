@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game — Midnight</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main>
+    <p><a href="/">Back</a></p>
+    <h1>Game</h1>
+
+    <p id="room-label">Room: ----</p>
+    <p id="round-label">Round 1</p>
+    <p id="phase-title">Night</p>
+    <p id="phase-description"></p>
+    <div id="role-card" hidden></div>
+    <div id="winner-banner" hidden></div>
+
+    <h2>Players</h2>
+    <ul id="game-player-list" class="player-list"></ul>
+
+    <div id="voting-section">
+      <p id="vote-prompt">Choose a player.</p>
+      <div id="vote-targets" class="vote-targets"></div>
+      <p id="vote-status" aria-live="polite"></p>
+    </div>
+
+    <h2>Announcements</h2>
+    <div id="announcements" aria-live="polite"></div>
+
+    <h2>Chat</h2>
+    <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
+    <form id="chat-form">
+      <input id="chat-input" maxlength="500" placeholder="Type a message" autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+
+    <p id="error-message" role="alert" aria-live="polite"></p>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/game.js"></script>
+</body>
+</html>

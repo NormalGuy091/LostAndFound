@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+main {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label, input, button, p, li, h1, h2 {
+  font-size: 14px;
+}
+
+input, button {
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+#room-code {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 24px;
+}
+
+.player-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.player-row {
+  padding: 6px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.vote-targets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chat-messages {
+  border: 1px solid #ccc;
+  padding: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 8px;
+}
+
+.chat-message, .announcement {
+  margin: 0 0 6px;
+}
+
+#error-message {
+  color: red;
+  min-height: 20px;
+}
+
+@media (max-width: 600px) {
+  body { margin: 12px; }
+}

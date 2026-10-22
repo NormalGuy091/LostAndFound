@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11131a">
+  <title>Midnight — Mafia</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main>
+    <h1>MAFIA</h1>
+
+    <section>
+      <h2>Create Room</h2>
+      <form id="create-form">
+        <label for="create-name">Name</label>
+        <input id="create-name" name="name" maxlength="20" autocomplete="nickname" required>
+        <button type="submit">Create Room</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Join Room</h2>
+      <form id="join-form">
+        <label for="join-name">Name</label>
+        <input id="join-name" name="name" maxlength="20" autocomplete="nickname" required>
+        <label for="room-code">Room code</label>
+        <input id="room-code" name="code" maxlength="4" autocomplete="off" required>
+        <button type="submit">Join Room</button>
+      </form>
+    </section>
+
+    <p id="error-message" role="alert" aria-live="polite"></p>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>

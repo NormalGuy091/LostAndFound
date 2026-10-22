@@ -12,7 +12,8 @@ db.exec(`
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT UNIQUE,
     password TEXT,
-    role TEXT DEFAULT 'user'
+    role TEXT DEFAULT 'user',
+    report_limits INT DEFAULT 3 NOT NULL
     )
 `)
 

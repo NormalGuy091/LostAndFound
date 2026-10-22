@@ -7,6 +7,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'url'
 import authMiddleware from './middleware/authMiddleware.js'
 
+
 const app = express()
 const PORT = process.env.PORT || 2345
 

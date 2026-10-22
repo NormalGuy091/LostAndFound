@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room Lobby — Midnight</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main>
+    <p><a href="/">Back</a></p>
+
+    <h1>Lobby</h1>
+
+    <div>
+      <p>Room code:</p>
+      <button id="copy-code" type="button">Copy room code</button>
+      <strong id="room-code">----</strong>
+    </div>
+
+    <p id="lobby-message" aria-live="polite"></p>
+
+    <h2>Players</h2>
+    <p id="player-count">0 players</p>
+    <ul id="player-list" class="player-list"></ul>
+    <p id="player-hint"></p>
+
+    <button id="start-game" type="button" hidden>Start Game</button>
+    <p id="host-hint"></p>
+
+    <p id="error-message" role="alert" aria-live="polite"></p>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/lobby.js"></script>
+</body>
+</html>

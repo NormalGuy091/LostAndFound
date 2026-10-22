@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Midnight Mafia
 
 A small real-time Mafia game built with Node.js, Express, Socket.IO, and vanilla browser JavaScript. The Mafia prototype runs independently from the existing application entry point.
@@ -24,3 +25,8 @@ Refreshing a page reconnects the player using a random session token stored in t
 ## Next steps
 
 Add end-to-end Socket.IO/browser tests, reconnect/disconnect handling during a game, room cleanup, and configurable game rules. Authentication and persistent storage are intentionally out of scope for this prototype.
+=======
+# LostandFound | Help other found their lost item!
+
+This is a website where people can submit Found Items and Lost Items.
+>>>>>>> b153481a548ea8e25eb4c7cbc7e05b5228582558
